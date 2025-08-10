@@ -6,9 +6,26 @@ Pull stock info from API, convert JSON payload to CSV.
 Create a program to pull stock data from an API and store in a CSV file. The payload from the API will be in JSON format.
 
 
-## Create free TwelveData Account
-First you need to create an account with API access to pull stock data.
+## Setup API Environment
+First you need to create an account with API access to pull stock data. You should **never hardcode your API key into your code nor should you push your key into the code repository**.
 1. Create free account at [TwelveData](https://TwelveData.com).
 2. Get the API key.
+3. Store the API key as an environment variable. In macOS replace **YOUR_API_KEY** with the actual key and execute the following:
+    `echo "export TWELVEDATA_API_KEY='YOUR_API_KEY'" >> ~/.zshrc`
+4. Reload your shell so the new environment variable is loaded.
+    `source ~/.zshrc`
+5. Confirm the new environment variable **TWELVEDATA_API_KEY** is correct.
+    `echo $TWELVEDATA_API_KEY`
+6. In the python code, import the environment variable by adding these lines:
+    ```python
+    import os
 
+    API_KEY = os.environ["TWELVEDATA_API_KEY"]
+    ```
+
+## Python Program
+As an initial step, we'll create a python program that will do the following:
+1. Call the TwelveData API for a single hardcoded stock "AAPL".
+2. Display the JSON payload to console.
+3. Write a subset of fields to a CSV with hardcoded name: **stock_prices.csv**.
 
