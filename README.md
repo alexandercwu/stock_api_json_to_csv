@@ -30,4 +30,4 @@ As an initial step, we'll create a python program that will do the following:
 3. Write a subset of fields to a CSV with hardcoded name: **stock_prices.csv**.
 
 Here is the source code:
-https://github.com/alexandercwu/stock_api_json_to_csv/blob/996ddfde4a694eee47faaec04cf47ccc431b5ad5/stock_api_to_csv_v1.py
+[stock_api_to_csv_v1.py](https://github.com/alexandercwu/stock_api_json_to_csv/blob/731c71693a6783a7240ddc24a9773718337fd662/stock_api_to_csv_v1.py#L1C1-L19C30)
