@@ -11,7 +11,7 @@ import csv
 from datetime import datetime
 
 API_KEY = os.environ['TWELVEDATA_API_KEY']
-STOCK_SYMBOL = 'AAPL'
+STOCK_SYMBOL = 'AAPL,NVDA'
 CSV_FILE = 'stock_prices2.csv'
 
 def fetch_stock_price(symbol):
@@ -19,17 +19,7 @@ def fetch_stock_price(symbol):
     response = requests.get(url)
     data = response.json()
 
-    # Some basic input checking on STOCK_SYMBOL cases
-    # 1. blank = error out
-    # 2. single stock symbol: it's a dictionary, make it into a nested dictionary.
-    # 3. list of stock symbols: it will be a nested dictionary.
-
-    # case single stock symbol
-    # Since the code now expects a nested dictionary, handle the case of a single stock payload.
-    if ',' not in STOCK_SYMBOL:
-        data = {STOCK_SYMBOL:data}
-
-    for ticker,detail in data.items():
+    for _, detail in data.items():
         if 'close' not in detail:
             raise Exception(f"Error fetching stock data: {data.get('message', 'Unknown error')}")
 

@@ -1,0 +1,60 @@
+{
+    "AAPL": {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "currency": "USD",
+        "datetime": "2025-08-13",
+        "timestamp": 1755091800,
+        "last_quote_at": 1755091800,
+        "open": "231.070007",
+        "high": "235",
+        "low": "230.42999",
+        "close": "233.33000",
+        "volume": "69833200",
+        "previous_close": "229.64999",
+        "change": "3.68001",
+        "percent_change": "1.60244",
+        "average_volume": "80422470",
+        "is_market_open": false,
+        "fifty_two_week": {
+            "low": "169.21001",
+            "high": "260.10001",
+            "low_change": "64.12000",
+            "high_change": "-26.77000",
+            "low_change_percent": "37.89374",
+            "high_change_percent": "-10.29220",
+            "range": "169.210007 - 260.100006"
+        }
+    },
+    "NVDA": {
+        "symbol": "NVDA",
+        "name": "NVIDIA Corporation",
+        "exchange": "NASDAQ",
+        "mic_code": "XNGS",
+        "currency": "USD",
+        "datetime": "2025-08-13",
+        "timestamp": 1755091800,
+        "last_quote_at": 1755091800,
+        "open": "182.62000",
+        "high": "183.97000",
+        "low": "179.35001",
+        "close": "181.59000",
+        "volume": "179480900",
+        "previous_close": "183.16000",
+        "change": "-1.57001",
+        "percent_change": "-0.85717804",
+        "average_volume": "160655380",
+        "is_market_open": false,
+        "fifty_two_week": {
+            "low": "86.62000",
+            "high": "184.48000",
+            "low_change": "94.96999",
+            "high_change": "-2.89000",
+            "low_change_percent": "109.63980",
+            "high_change_percent": "-1.56657",
+            "range": "86.620003 - 184.479996"
+        }
+    }
+}
