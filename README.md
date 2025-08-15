@@ -300,7 +300,7 @@ We handled this using a generic requests call to the API. However, there is also
 ## Version 4
 Reading the TwelveData API more carefully, we see that another option instead of using requests for a generic API call, we can use the TwelveData SDK python library. Let's give it a go!
 
-Let's start by calling the API and printing just the symbol, close price, and timestamp. It's simpler. See the source code here: [stock_api_to_csv_v4.py](https://github.com/alexandercwu/stock_api_json_to_csv/stock_api_to_csv_v4.py)
+Let's start by calling the API and printing just the symbol, close price, and timestamp. It's simpler. See the source code here: [stock_api_to_csv_v4.py](stock_api_to_csv_v4.py)
 
 But what happens if we change the list of symbols to a single symbol? Yup, it breaks like before because the repsonse is different from the API.
 
@@ -313,14 +313,14 @@ if isinstance(quotes, dict) and "symbol" in quotes:
     # Single symbol case — wrap into a dict keyed by symbol name
     quotes = {quotes["symbol"]: quotes}
 ```
-See the source code here: [stock_api_to_csv_v5.py](https://github.com/alexandercwu/stock_api_json_to_csv/stock_api_to_csv_v5.py)
+See the source code here: [stock_api_to_csv_v5.py](stock_api_to_csv_v5.py)
 
 Now that this is working, let's expand this to save to CSV.
 
 ## Version 6
 Finally let's add the functionality to write the data to a CSV file. One additional thing is we should make the timestamp look like how we had it prior, i.e. instead of epoch time, have it in a human readable ISO format. The best practice is to have timestamps in UTC, but in this case we'll do what we did before and have it in local time for this exercise.
 
-See the source code here: [stock_api_to_csv_v6.py](https://github.com/alexandercwu/stock_api_json_to_csv/stock_api_to_csv_v6.py)
+See the source code here: [stock_api_to_csv_v6.py](stock_api_to_csv_v6.py)
 
 ## Conclusion
-We walked through a general way to capture data from an API in JSON format and write the data to CSV. Along the way we saw some cases that broke the program and illustrated why it's important to regression test your code. Finally we have two versions of the program, [**Version 3**](https://github.com/alexandercwu/stock_api_json_to_csv/stock_api_to_csv_v3.py) which relies on a general requests call and [**Version 6**](https://github.com/alexandercwu/stock_api_json_to_csv/stock_api_to_csv_v6.py) which takes advantage of TwelveData's python SDK. One more thing to keep in mind is if the payload from the API has fields whose names chnage and you are using them, it may break. You should probably write some tests for it.
+We walked through a general way to capture data from an API in JSON format and write the data to CSV. Along the way we saw some cases that broke the program and illustrated why it's important to regression test your code. Finally we have two versions of the program, [**Version 3**](stock_api_to_csv_v3.py) which relies on a general requests call and [**Version 6**](stock_api_to_csv_v6.py) which takes advantage of TwelveData's python SDK. One more thing to keep in mind is if the payload from the API has fields whose names chnage and you are using them, it may break. You should probably write some tests for it.
