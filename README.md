@@ -180,7 +180,7 @@ And the output is:
 ```
 AAPL
 NVDA
-````
+```
 
 Let's take a look at the detail entries:
 
